@@ -20,7 +20,7 @@ void wypis() {
 void sortowanie() {
     int i, j,temp,passes=0;
     cout<<endl;
-    for(i = 0; i<10; i++) {
+    for(i = 0; i<8; i++) {
         for(j = i+1; j<8; j++)
         {
             if(liczba[j] < liczba[i]) {
