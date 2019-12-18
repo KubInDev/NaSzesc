@@ -4,9 +4,9 @@
 using namespace std;
 
 string choice;
+int dlugoscTabeli = 10;
 int liczby[10];
 int licznik = 0;
-int n = 10;
 
 void wstep() {
 
@@ -39,9 +39,9 @@ void sortowanie() {
 
     cout << "Zaczymam Sortowac: " << endl;
 
-    while (n > 1)
+    while (dlugoscTabeli > 1)
     {
-        for (int i = 0; i < n - 1; i++)
+        for (int i = 0; i < dlugoscTabeli - 1; i++)
         {
             if (liczby[i] < liczby[i + 1])
             {
@@ -58,7 +58,7 @@ void sortowanie() {
 
         cout << endl;
 
-        n = n - 1;
+        dlugoscTabeli = dlugoscTabeli - 1;
     }
 
     cout << endl << endl << "Posortowane w " << licznik << " posortowaniach!" << endl;
