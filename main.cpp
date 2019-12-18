@@ -1,7 +1,7 @@
 #include <iostream>
 
 using namespace std;
-int liczba[7];
+int liczba[10];
 
 void wpis() {
     cout << "Wpisz swoje liczby po Enterze" << endl;
@@ -21,7 +21,7 @@ void sortowanie() {
     int i, j,temp,passes=0;
     cout<<endl;
     for(i = 0; i<8; i++) {
-        for(j = i+1; j<8; j++)
+        for(j = i+1; j<10; j++)
         {
             if(liczba[j] < liczba[i]) {
                 temp = liczba[i];
@@ -32,7 +32,7 @@ void sortowanie() {
         passes++;
     }
     cout <<"Wysortowane elementy: \n";
-    for(i = 0; i<8; i++) {
+    for(i = 0; i<10; i++) {
         cout <<liczba[i]<<"\t";
     }
     cout<<"\nIlosc sortowan:"<<passes<<endl;
