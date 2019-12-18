@@ -1,54 +1,80 @@
 #include <iostream>
-
+#include <Windows.h>
+#include <cstdlib>
 using namespace std;
-int liczba[10];
+
+string choice;
+int liczby[10];
+int licznik = 0;
+int n = 10;
+
+void wstep() {
+
+    cout << "Witaj Wpisz mi jakies liczbya a ja je posortuje!" << endl;
+    cout << "UWAGA!, Wpisz wszystkie liczby po ENTERZE!" << endl;
+
+}
 
 void wpis() {
-    cout << "Wpisz swoje liczby po Enterze" << endl;
-    for(int i=0; i<8; i++){
-        cin >> liczba[i];
+    for(int x = 0; x < 10; x++)
+    {
+        cin >> liczby[x];
+        if (liczby[x] <= 0)
+        {
+            cout << "Zly skladnik!";
+            exit(0);
+        }
     }
 }
 
 void wypis() {
     cout << "Oto twoje liczby: ";
-    for(int x=0; x<8; x++) {
-        cout << liczba[x] << ",";
+    for(int x=0; x<10; x++) {
+        cout << liczby[x] << ",";
     }
+    cout << endl;
 }
 
 void sortowanie() {
-    int i, j,temp,passes=0;
-    cout<<endl;
-    for(i = 0; i<10; i++) {
-        for(j = i+1; j<10; j++)
+
+    cout << "Zaczymam Sortowac: " << endl;
+
+    while (n > 1)
+    {
+        for (int i = 0; i < n - 1; i++)
         {
-            if(liczba[j] < liczba[i]) {
-                temp = liczba[i];
-                liczba[i] = liczba[j];
-                liczba[j] = temp;
+            if (liczby[i] < liczby[i + 1])
+            {
+                swap(liczby[i], liczby[i + 1]);
             }
-            for(int g=0; g<10; g++){
-                
-                cout << liczba[g] << "";
         }
 
-        passes++;
+        for (int z = 0; z < 10; z++)
+        {
+            cout << liczby[z] << " ";
+        }
+
+        licznik = licznik + 1;
+
+        cout << endl;
+
+        n = n - 1;
     }
-    cout <<"Wysortowane elementy: \n";
-    for(i = 0; i<10; i++) {
-        cout <<liczba[i]<<"\t";
-    }
-    cout<<"\nIlosc sortowan:"<<passes<<endl;
+
+    cout << endl << endl << "Posortowane w " << licznik << " posortowaniach!" << endl;
+
 }
 
-main(){
-    //Wpis i wypis liczb
+void wyjscie() {
+
+    cout << "Dziekuje za uzycie naszego programu!" << endl;
+
+}
+main()
+{
+    wstep();
     wpis();
     wypis();
-    ///////////////////////
-
-    //Sortowanie
     sortowanie();
-
+    wyjscie();
 }
