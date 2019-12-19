@@ -16,10 +16,10 @@ void wstep() {
 }
 
 void wpis() {
-    for(int x = 0; x < 10; x++)
+    for(int q = 0; q < 10; q++)
     {
-        cin >> liczby[x];
-        if (liczby[x] <= 0)
+        cin >> liczby[q];
+        if (liczby[q] <= 0)
         {
             cout << "Zly skladnik!";
             exit(0);
@@ -28,30 +28,32 @@ void wpis() {
 }
 
 void wypis() {
+    cout << "--------------------------------------------------------------------" << endl;
     cout << "Oto twoje liczby: ";
-    for(int x=0; x<10; x++) {
-        cout << liczby[x] << ",";
+    for(int p=0; p<10; p++) {
+        cout << liczby[p] << ",";
     }
     cout << endl;
 }
 
 void sortowanie() {
 
+    cout << "--------------------------------------------------------------------" << endl;
     cout << "Zaczymam Sortowac: " << endl;
 
     while (dlugoscTabeli > 1)
     {
-        for (int i = 0; i < dlugoscTabeli - 1; i++)
+        for (int d = 0; d < dlugoscTabeli - 1; d++)
         {
-            if (liczby[i] < liczby[i + 1])
+            if (liczby[d] < liczby[d + 1])
             {
-                swap(liczby[i], liczby[i + 1]);
+                swap(liczby[d], liczby[d + 1]);
             }
         }
 
         for (int z = 0; z < 10; z++)
         {
-            cout << liczby[z] << " ";
+            cout << liczby[z] << " , ";
         }
 
         licznik = licznik + 1;
